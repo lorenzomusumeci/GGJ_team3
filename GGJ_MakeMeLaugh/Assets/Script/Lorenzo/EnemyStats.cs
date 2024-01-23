@@ -16,8 +16,14 @@ public class EnemyStats : MonoBehaviour
         currentHealth = maxHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
-
-    void GetDamage(int damage)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TakeDamage(1);
+        }
+    }
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
