@@ -13,9 +13,7 @@ public class PlayerMov : MonoBehaviour
     private Vector3 moveDirection;
     public Transform orientation;
 
-    public LayerMask whatIsGround;
     public float groundDrag;
-    private bool grounded;
 
     public Transform firePoint;
     public GameObject prefabBullet;
@@ -34,9 +32,6 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         MyInput();
-
-        /*Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        rb.MovePosition(transform.position + movement * Time.deltaTime * playerSpeed);*/
 
         if (Input.GetMouseButtonDown(0) && canShoot == true)
         {

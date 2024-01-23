@@ -8,7 +8,10 @@ public class EnemyStats : MonoBehaviour
     private int currentHealth;
     [SerializeField]
     public int maxHealth;
+    [SerializeField]
+    public int damage;
 
+    public GameObject happyPrefab;
     public EnemyHealthBar enemyHealthBar;
 
     private void Start()
@@ -16,13 +19,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth = maxHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(1);
-        }
-    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -34,9 +31,24 @@ public class EnemyStats : MonoBehaviour
             Die();
         }
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
+            
+            if(playerStats != null)
+            {
+                playerStats.TakeDamage(damage);
+            }
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
+    }
+
     void Die()
     {
         gameObject.gameObject.SetActive(false);
+        happyPrefab.gameObject.SetActive(true);
     }
 }
