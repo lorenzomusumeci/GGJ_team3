@@ -1,34 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING};
 
-    [System.Serializable]
-    public class Wave
-    {
-        public string name;
-        public Transform enemy;
-        public int count;
-        public float rate;
-    }
+    public Transform enemy;
+    public int count = 4;
+    public float rate = 1f;
 
-    public Wave[] waves;
+    public Transform[] spawnPoints;
     private int nextWave = 0;
 
     public float timeBetweenWaves = 5f;
-    [SerializeField]
     private float waveCountdown;
-
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
 
+    public Text numberWaves;
+    private int currentWave = 0;
+
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
+        StartCoroutine(CooldownWaves());
     }
 
     private void Update()
@@ -37,7 +35,8 @@ public class WaveSpawner : MonoBehaviour
         {
             if(!EnemyIsAlive())
             {
-                return;
+                WaveCompleted();
+                StartCoroutine(CooldownWaves());
             }
             else
             {
@@ -49,13 +48,23 @@ public class WaveSpawner : MonoBehaviour
         {
             if(state != SpawnState.SPAWNING)
             {
-                StartCoroutine(SpawnWave(waves[nextWave]));
+                StartCoroutine(SpawnWave());
+                currentWave++;
+                numberWaves.text = "ONDATA NUMERO " + currentWave;
+                numberWaves.gameObject.SetActive(true);
             }
         }
         else
         {
             waveCountdown -= Time.deltaTime;
         }
+    }
+
+    void WaveCompleted()
+    {
+        state = SpawnState.COUNTING;
+        waveCountdown = timeBetweenWaves;
+        nextWave++;    
     }
 
     bool EnemyIsAlive()
@@ -74,14 +83,18 @@ public class WaveSpawner : MonoBehaviour
         return true;
     }
 
-    IEnumerator SpawnWave(Wave _wave)
+    IEnumerator SpawnWave()
     {
+
+
         state = SpawnState.SPAWNING;
 
-        for(int i = 0; i < _wave.count; i++)
+        count += count / 2;
+
+        for(int i = 0; i < count; i++)
         {
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f / _wave.rate);
+            SpawnEnemy(enemy);
+            yield return new WaitForSeconds(rate);
         }
 
         state = SpawnState.WAITING;
@@ -89,8 +102,22 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
+    IEnumerator CooldownWaves()
+    {
+        numberWaves.text = "PROSSIMA ONDATA TRA 5";
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "PROSSIMA ONDATA TRA 4";
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "PROSSIMA ONDATA TRA 3";
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "PROSSIMA ONDATA TRA 2";
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "PROSSIMA ONDATA TRA 1";
+    }
+
     void SpawnEnemy(Transform _enemy)
     {
-        Instantiate(_enemy, transform.position, transform.rotation);
+        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(_enemy, sp.position, sp.rotation);
     }
 }
