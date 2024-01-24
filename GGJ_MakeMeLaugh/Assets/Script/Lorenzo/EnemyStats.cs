@@ -10,9 +10,12 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     [SerializeField]
     public int damage;
+    [SerializeField]
+    private int knockbackForce = 10;
 
     public GameObject happyPrefab;
     public EnemyHealthBar enemyHealthBar;
+    public Rigidbody rbEnemy;
 
     private void Start()
     {
@@ -34,21 +37,23 @@ public class EnemyStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
-            
-            if(playerStats != null)
+            Vector3 direction = (transform.position - collision.transform.position).normalized;
+
+            if (playerStats != null)
             {
                 playerStats.TakeDamage(damage);
             }
-            gameObject.transform.parent.gameObject.SetActive(false);
+
+            rbEnemy.AddForce(direction * knockbackForce);
         }
     }
 
     void Die()
     {
-        gameObject.gameObject.SetActive(false);
-        happyPrefab.gameObject.SetActive(true);
+        Instantiate(happyPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

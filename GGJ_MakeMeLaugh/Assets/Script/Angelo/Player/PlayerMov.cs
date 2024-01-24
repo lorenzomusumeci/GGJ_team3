@@ -21,12 +21,14 @@ public class PlayerMov : MonoBehaviour
     public int cooldownShoot = 1;
     public bool canShoot;
 
+    public bool knockbacked;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.drag = groundDrag;
         canShoot = true;
+        knockbacked = false;
     }
 
     void Update()
@@ -41,7 +43,10 @@ public class PlayerMov : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if(knockbacked == false)
+        {
+            MovePlayer();
+        }     
     }
 
     private void MyInput()
@@ -75,7 +80,7 @@ public class PlayerMov : MonoBehaviour
         StartCoroutine("CooldownShoot");
     }
 
-    IEnumerator CooldownShoot()
+    public IEnumerator CooldownShoot()
     {
         canShoot = false;
 
