@@ -7,7 +7,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     private int currentHealth;
     [SerializeField]
-    public int maxHealth;
+    private int maxHealth;
     [SerializeField]
     public int damage;
     [SerializeField]
@@ -15,12 +15,14 @@ public class EnemyStats : MonoBehaviour
 
     public GameObject happyPrefab;
     public EnemyHealthBar enemyHealthBar;
+    public WaveSpawner waveSpawner;
     public Rigidbody rbEnemy;
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        waveSpawner = FindObjectOfType<WaveSpawner>();
+        maxHealth = Mathf.Clamp(waveSpawner.currentWave / 5 + 1, 1, 5);
+        currentHealth = Mathf.Clamp(maxHealth, 0, maxHealth);
     }
 
     public void TakeDamage(int damage)

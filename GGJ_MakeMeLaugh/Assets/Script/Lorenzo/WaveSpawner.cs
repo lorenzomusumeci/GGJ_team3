@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     private SpawnState state = SpawnState.COUNTING;
 
     public Text numberWaves;
-    private int currentWave = 0;
+    public int currentWave = 0;
 
     private void Start()
     {
@@ -49,6 +49,7 @@ public class WaveSpawner : MonoBehaviour
             if(state != SpawnState.SPAWNING)
             {
                 StartCoroutine(SpawnWave());
+                count += count / 2;
                 currentWave++;
                 numberWaves.text = "ONDATA NUMERO " + currentWave;
                 numberWaves.gameObject.SetActive(true);
@@ -85,11 +86,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-
-
         state = SpawnState.SPAWNING;
-
-        count += count / 2;
 
         for(int i = 0; i < count; i++)
         {
