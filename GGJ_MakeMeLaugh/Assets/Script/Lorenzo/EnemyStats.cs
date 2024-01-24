@@ -17,10 +17,13 @@ public class EnemyStats : MonoBehaviour
     public EnemyHealthBar enemyHealthBar;
     public WaveSpawner waveSpawner;
     public Rigidbody rbEnemy;
+    public ParticleSystem particleSystem;
+    public CoinManager coinManager;
 
     private void Start()
     {
         waveSpawner = FindObjectOfType<WaveSpawner>();
+        coinManager = FindObjectOfType<CoinManager>();
         maxHealth = Mathf.Clamp(waveSpawner.currentWave / 5 + 1, 1, 5);
         currentHealth = Mathf.Clamp(maxHealth, 0, maxHealth);
     }
@@ -55,6 +58,8 @@ public class EnemyStats : MonoBehaviour
 
     void Die()
     {
+        coinManager.UpdateCoin();
+        particleSystem.Play();
         Instantiate(happyPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }

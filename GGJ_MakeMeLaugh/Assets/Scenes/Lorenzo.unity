@@ -1288,6 +1288,7 @@ MonoBehaviour:
   - {fileID: 955230858}
   timeBetweenWaves: 5
   numberWaves: {fileID: 654191595}
+  currentWave: 0
 --- !u!1 &1462971171
 GameObject:
   m_ObjectHideFlags: 0
