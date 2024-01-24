@@ -10,14 +10,14 @@ public class PlayerMov : MonoBehaviour
     public GameObject prefabBullet;
     public Transform target;
     public int bulletSpeed = 10;
-
+    public Transform cameraPlayer;
 
     void Update()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         rb.MovePosition(transform.position + movement * Time.deltaTime * playerSpeed);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && (GameObject.Find("PauseMenu").GetComponent<Pausa>().showPause == false))
         {
             Sparo();
         }    
@@ -25,7 +25,8 @@ public class PlayerMov : MonoBehaviour
 
     public void Sparo()
     {
-        GameObject bullet = Instantiate(prefabBullet, target.position, target.rotation);
+        GameObject bullet = Instantiate(prefabBullet, target.position, cameraPlayer.rotation);
+        Vector3 direction = new Vector3(cameraPlayer.rotation.x, transform.rotation.y, 0);
 
         // Ottenere il componente Rigidbody dal proiettile
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
@@ -34,7 +35,7 @@ public class PlayerMov : MonoBehaviour
         if (bulletRb != null)
         {
             // Applica la forza al proiettile
-            bulletRb.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
+            bulletRb.AddForce(direction * bulletSpeed, ForceMode.Impulse);
         }
 
     }
