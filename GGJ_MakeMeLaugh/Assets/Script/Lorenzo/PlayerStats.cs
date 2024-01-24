@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     private int currentHealth;
     [SerializeField]
     public int maxHealth;
+    private bool canHit = true;
 
     public PlayerHealthBar playerHealthBar;
 
@@ -19,14 +20,26 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        playerHealthBar.UpdateHealthBar(currentHealth, maxHealth);
-
-        if (currentHealth == 0)
+        if(canHit == true)
         {
-            Die();
+            currentHealth -= damage;
+            playerHealthBar.UpdateHealthBar(currentHealth, maxHealth);
+
+            if (currentHealth == 0)
+            {
+                Die();
+            }
+
+            canHit = false;
+            StartCoroutine("CooldownHit");
         }
+    }
+
+    IEnumerator CooldownHit()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        canHit = true;
     }
 
     void Die()
