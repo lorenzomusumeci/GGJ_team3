@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthBar : MonoBehaviour
 {
     public Slider slider;
+    public Image redScreen;
 
     public void UpdateHealthBar(int currentValue, int maxValue)
     {

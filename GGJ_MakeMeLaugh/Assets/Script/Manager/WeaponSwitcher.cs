@@ -6,6 +6,7 @@ public class WeaponSwitcher : MonoBehaviour
 {
     public int selectedWeapon = 0;
     public int acquiredWeapon = 1;
+    public GameObject[] weapons;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,11 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            SwitchToSecondOrder(weapons[2]);
+        }
+
         int previousSelectedWeapon = selectedWeapon;
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0f)

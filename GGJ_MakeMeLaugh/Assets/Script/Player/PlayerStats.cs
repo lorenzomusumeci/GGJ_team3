@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
         {
             currentHealth -= damage;
             playerHealthBar.UpdateHealthBar(currentHealth, maxHealth);
+            StartCoroutine(RedScreen());
 
             if (currentHealth == 0)
             {
@@ -37,9 +38,18 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator CooldownHit()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         canHit = true;
+    }
+
+    IEnumerator RedScreen()
+    {
+        playerHealthBar.redScreen.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        playerHealthBar.redScreen.gameObject.SetActive(false);
     }
 
     void Die()

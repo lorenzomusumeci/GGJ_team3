@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExplodingBullet : MonoBehaviour
 {
     public int damage = 1;
-    public int radius = 10;
+    public int radius;
     public GameObject explosionEffect;
 
     private void OnCollisionEnter(Collision collision)

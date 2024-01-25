@@ -8,6 +8,7 @@ public class ShootManager : MonoBehaviour
     public float fireRate = 1f;
     public float nextTimeToFire = 0f;
 
+    public AudioSource audioSource;
     public Transform firePoint;
     public GameObject prefabBullet;
 

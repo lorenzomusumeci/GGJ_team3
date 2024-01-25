@@ -20,6 +20,8 @@ public class EnemyStats : MonoBehaviour
     public ParticleSystem particleSystem;
     public CoinManager coinManager;
 
+    private bool canHit = true;
+
     private void Start()
     {
         waveSpawner = FindObjectOfType<WaveSpawner>();
@@ -34,10 +36,20 @@ public class EnemyStats : MonoBehaviour
 
         enemyHealthBar.UpdateHealthBar(currentHealth, maxHealth);
 
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             Die();
         }
+
+        canHit = false;
+        StartCoroutine("CooldownHit");
+    }
+
+    IEnumerator CooldownHit()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        canHit = true;
     }
 
     private void OnCollisionEnter(Collision collision)
