@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 168243431}
   - component: {fileID: 168243430}
   m_Layer: 0
-  m_Name: Seppia
+  m_Name: SeppiaMuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
@@ -447,11 +447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3565
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.39799994
+      value: 0.526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalPosition.y
@@ -459,43 +459,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.85500014
+      value: 0.797
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9444965
+      value: 0.15230939
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.022131877
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3285216
+      value: -0.98091954
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.1187811
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -13.873
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 141.642
+      value: 197.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.427
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1333615769702337052, guid: af37a35eff423864c95b9525d31e1704, type: 3}
     - target: {fileID: 919132149155446097, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_Name
-      value: balena (1)
+      value: SparaRane
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_IsActive
@@ -1408,7 +1412,7 @@ GameObject:
   - component: {fileID: 778117138}
   - component: {fileID: 778117142}
   m_Layer: 0
-  m_Name: SparaRane
+  m_Name: SparaRaneMuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,8 +2086,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1323330958}
-  - component: {fileID: 1323330957}
-  - component: {fileID: 1323330956}
   - component: {fileID: 1323330955}
   - component: {fileID: 1323330961}
   - component: {fileID: 1323330960}
@@ -2109,56 +2111,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &1323330956
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323330954}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1323330957
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323330954}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1323330958
 Transform:
   m_ObjectHideFlags: 0
@@ -2891,7 +2843,7 @@ GameObject:
   - component: {fileID: 1623936300}
   - component: {fileID: 1623936299}
   m_Layer: 0
-  m_Name: Balenottera
+  m_Name: BalenotteraMuro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3290,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70eb57f3b7116f409831d8f280ae860, type: 3}
