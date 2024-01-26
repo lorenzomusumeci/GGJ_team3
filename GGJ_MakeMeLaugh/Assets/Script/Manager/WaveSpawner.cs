@@ -50,18 +50,18 @@ public class WaveSpawner : MonoBehaviour
             {
                 StartCoroutine(SpawnWave());
 
-                if (count < 50)
+                if (count < 75)
                 {
                     count += count / 4;
 
-                    if(count > 50)
+                    if(count > 75)
                     {
-                        count = 50;
+                        count = 75;
                     }
                 }
 
                 currentWave++;
-                numberWaves.text = "ONDATA NUMERO " + currentWave;
+                numberWaves.text = "WAVE NUMBER " + currentWave;
                 numberWaves.gameObject.SetActive(true);
             }
         }
@@ -110,15 +110,15 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator CooldownWaves()
     {
-        numberWaves.text = "PROSSIMA ONDATA TRA 5";
+        numberWaves.text = "NEXT WAVE IN 5";
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "PROSSIMA ONDATA TRA 4";
+        numberWaves.text = "NEXT WAVE IN 4";
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "PROSSIMA ONDATA TRA 3";
+        numberWaves.text = "NEXT WAVE IN 3";
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "PROSSIMA ONDATA TRA 2";
+        numberWaves.text = "NEXT WAVE IN 2";
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "PROSSIMA ONDATA TRA 1";
+        numberWaves.text = "NEXT WAVE IN 1";
     }
 
     void SpawnEnemy(Transform _enemy)
