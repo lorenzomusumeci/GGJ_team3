@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Angelo/AngeloMain.unity
     guid: 6e6dd2262e22b294ca6ff64b19b36c64
   - enabled: 1
-    path: Assets/Scenes/Angelo/Angelo.unity
-    guid: a615093bfe539c64d87a57e1bd9d74bb
-  - enabled: 1
-    path: Assets/Scenes/Angelo/Comandi.unity
-    guid: 44eb5b11b17b43841ba90fe621136d49
-  - enabled: 1
-    path: Assets/Scenes/Angelo/Credits.unity
-    guid: a61bddee1ca1d6f479c7cf803d96b45d
+    path: Assets/Scenes/Environment.unity
+    guid: 494d36fd6687d4343986b9a8dcabbb0b
   m_configObjects: {}

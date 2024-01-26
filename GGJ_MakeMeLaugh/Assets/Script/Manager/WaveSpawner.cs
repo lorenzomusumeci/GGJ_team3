@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING};
 
-    public Transform enemy;
+    public Transform[] enemy;
     [SerializeField, Range(4, 50)]
     private int count = 4;
     public float rate = 1f;
@@ -99,7 +99,9 @@ public class WaveSpawner : MonoBehaviour
 
         for(int i = 0; i < count; i++)
         {
-            SpawnEnemy(enemy);
+            int enemyIndex = Random.Range(0, enemy.Length);
+            SpawnEnemy(enemy[enemyIndex]);
+            
             yield return new WaitForSeconds(rate);
         }
 
