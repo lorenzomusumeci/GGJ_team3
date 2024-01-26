@@ -17,7 +17,10 @@ public class EnemyStats : MonoBehaviour
     public EnemyHealthBar enemyHealthBar;
     public WaveSpawner waveSpawner;
     public Rigidbody rbEnemy;
+<<<<<<< HEAD
     public ParticleSystem particleSystem;
+=======
+>>>>>>> main
     public CoinManager coinManager;
 
     private bool canHit = true;
@@ -68,10 +71,13 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         coinManager.UpdateCoin();
+<<<<<<< HEAD
         particleSystem.Play();
+=======
+>>>>>>> main
         Instantiate(happyPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
