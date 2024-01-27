@@ -5,7 +5,8 @@ using UnityEngine;
 public class Balenottera : ShootManager
 {
     public Bolla bolla;
-    
+    public Animator animator;
+
     private void Start()
     {
         bolla.damage = 1;
@@ -17,6 +18,7 @@ public class Balenottera : ShootManager
         GameObject bullet = Instantiate(prefabBullet, firePoint.position, firePoint.rotation);
 
         audioSource.Play();
+        animator.SetTrigger("A");
 
         // Ottenere il componente Rigidbody dal proiettile
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();

@@ -20,6 +20,7 @@ public class WeaponBuyer : MonoBehaviour
     public TextMeshProUGUI text;
     public CoinManager coin;
     public WeaponSwitcher weaponSwitcher;
+    public AudioSource sfx;
 
     [Header("Balenottera")]
     public Bolla bolla;
@@ -32,10 +33,13 @@ public class WeaponBuyer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canBuy == true)
         {
+            
+
             if(weaponName == "Balenottera")
             {
                 if(coin.coin >= potenziamento)
                 {
+                    sfx.Play();
                     coin.coin -= potenziamento;
                     coin.UpdateCoin();
                     bolla.damage++;
@@ -49,6 +53,7 @@ public class WeaponBuyer : MonoBehaviour
                 {
                     if(coin.coin >= acquisto)
                     {
+                        sfx.Play();
                         coin.coin -= acquisto;
                         coin.UpdateCoin();
                         weaponSwitcher.acquiredWeapon++;
@@ -59,6 +64,7 @@ public class WeaponBuyer : MonoBehaviour
                 else
                     if(coin.coin >= potenziamento)
                     {
+                        sfx.Play();
                         coin.coin -= potenziamento;
                         coin.UpdateCoin();
                         sparaRane.damage++;

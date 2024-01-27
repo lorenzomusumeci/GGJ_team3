@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7996979690948377444}
   - component: {fileID: 7996979690948377445}
   - component: {fileID: 7996979690948377442}
+  - component: {fileID: 5343067600837777327}
   - component: {fileID: 7996979690948377441}
   m_Layer: 0
   m_Name: Balenottera
@@ -127,7 +128,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e8cd359ac188af94fa5d3a09891c1b28, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e938729c71c9a342a129bc3e603af31, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -213,6 +214,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5343067600837777327
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996979690948377453}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de2dc3e834d8f7b46921d15887afa9d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7996979690948377441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,9 +247,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  fireRate: 2
+  fireRate: 1
   nextTimeToFire: 0
   audioSource: {fileID: 7996979690948377442}
   firePoint: {fileID: 7996979690325448637}
   prefabBullet: {fileID: 8177460784100688970, guid: 4297facdd383c554f8a478b0c103dff0, type: 3}
   bolla: {fileID: -2236218421059497439, guid: 4297facdd383c554f8a478b0c103dff0, type: 3}
+  animator: {fileID: 5343067600837777327}
