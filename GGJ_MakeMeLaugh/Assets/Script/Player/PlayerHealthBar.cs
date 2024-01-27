@@ -7,6 +7,16 @@ public class PlayerHealthBar : MonoBehaviour
 {
     public Slider slider;
     public Image redScreen;
+    public Image backgroundImage;
+    public Sprite backgroundSprite;
+    public Sprite balenaSprite;
+    public Sprite ranaSprite;
+    public Sprite seppiaSprite;
+
+    private void Update()
+    {
+        backgroundImage.sprite = backgroundSprite;
+    }
 
     public void UpdateHealthBar(int currentValue, int maxValue)
     {
