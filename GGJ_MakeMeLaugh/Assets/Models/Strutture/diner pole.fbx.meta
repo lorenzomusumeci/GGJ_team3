@@ -1,18 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:GGJ_MakeMeLaugh/Assets/Models/Balenottera/balenia.fbx.meta
-guid: 5e671a34d9905f54884f33b9901ddc52
-========
-guid: d870c031d7c034447bc3b56faf48a329
->>>>>>>> Alessandro:GGJ_MakeMeLaugh/Assets/Models/Strutture/casa01.fbx.meta
+guid: 1a45a8164fc29f540874f831f041257e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: balena
-    second: {fileID: 2100000, guid: a0fce2075857b784a978c300e81461b0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
