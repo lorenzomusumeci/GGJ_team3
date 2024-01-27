@@ -22,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
 
     public Text numberWaves;
     public int currentWave = 0;
+    public AudioSource roundChanged;
 
     private void Start()
     {
@@ -74,7 +75,8 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         state = SpawnState.COUNTING;
-        waveCountdown = timeBetweenWaves;   
+        waveCountdown = timeBetweenWaves;
+        roundChanged.Play();
     }
 
     bool EnemyIsAlive()

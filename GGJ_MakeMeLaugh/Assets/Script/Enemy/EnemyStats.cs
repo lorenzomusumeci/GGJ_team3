@@ -31,6 +31,11 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(canHit == false)
+        {
+            return;
+        }
+
         currentHealth -= damage;
 
         enemyHealthBar.UpdateHealthBar(currentHealth, maxHealth);
@@ -40,12 +45,13 @@ public class EnemyStats : MonoBehaviour
             Die();
         }
 
-        canHit = false;
         StartCoroutine("CooldownHit");
     }
 
     IEnumerator CooldownHit()
     {
+        canHit = false;
+
         yield return new WaitForSeconds(0.5f);
 
         canHit = true;

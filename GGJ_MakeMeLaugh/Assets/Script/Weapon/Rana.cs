@@ -16,6 +16,8 @@ public class Rana : ShootManager
 
     public override void Shoot()
     {
+        audioSource.Play();
+
         GameObject bullet = Instantiate(prefabBullet, firePoint.position, firePoint.rotation);
 
         // Ottenere il componente Rigidbody dal proiettile
