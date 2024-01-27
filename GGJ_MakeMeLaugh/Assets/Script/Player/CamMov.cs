@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class CamMov : MonoBehaviour
 {
-    public float mouseSpeed = 100f; //sensibilita' mouse
-
+    public Slider sensibility;
+    public float mouseSensitivity = 100f; //sensibilita' mouse
     public Transform playerBody; // riferimento al player
 
     float xRotation = 0f;
@@ -18,8 +20,10 @@ public class CamMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime;
+        mouseSensitivity = sensibility.value;
+
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY; // fa sì che il movimento non sia al contrario
 
@@ -29,4 +33,6 @@ public class CamMov : MonoBehaviour
 
         playerBody.Rotate(Vector3.up * mouseX);
     }
+
+  
 }

@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Pausa : MonoBehaviour
 {
     public GameObject pausaTesto;
+    public GameObject canvasOpzioni;
+
     public bool showPause = false;
     public string nomeScenaMainMenu ="";
 
@@ -30,19 +32,42 @@ public class Pausa : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            showPause = !showPause;
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && showPause == true)
-        {
-            SceneManager.LoadScene(nomeScenaMainMenu);
-        }
-        if (showPause)
-        {
-            PauseGame();
-        }
-        else
-        {
-            ResumeGame();
-        }
+            showPause = true;
+            if (showPause)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                PauseGame();
+            }
+            else
+            {
+               
+            }
+        }   
+    }
+
+    public void ExitPausa()
+    {
+        showPause = false;
+        pausaTesto.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        ResumeGame();
+
+    }
+
+    public void VaiOpzioniDaPausa()
+    {
+        canvasOpzioni.SetActive(true);
+        pausaTesto.SetActive(false);
+    }
+    public void VaiPausaDaOpzioni()
+    {
+        canvasOpzioni.SetActive(false);
+        pausaTesto.SetActive(true);
+    }
+    public void VaiMainDaOpzioni()
+    {
+        SceneManager.LoadScene(nomeScenaMainMenu);
     }
 }

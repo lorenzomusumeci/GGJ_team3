@@ -16,12 +16,7 @@ public class Bolla : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
-
-            if (enemyStats != null)
-            {
-                enemyStats.TakeDamage(damage);
-            }
+           
         }
 
         Destroy(gameObject);

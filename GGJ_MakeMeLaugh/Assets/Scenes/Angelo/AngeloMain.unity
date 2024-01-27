@@ -1051,7 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1419307631}
   comandiMenu: {fileID: 1237834862}
@@ -1469,7 +1468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}
@@ -1718,7 +1716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}
@@ -2401,7 +2398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}
@@ -2553,7 +2549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}
@@ -2743,7 +2738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}
@@ -3072,7 +3066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 2002939431}
@@ -3380,7 +3373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb88732233abba647bd2749dbc0146ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScenaGioco: Angelo
   mainMenu: {fileID: 1001990149}
   creditsMenu: {fileID: 1237834862}
   comandiMenu: {fileID: 1419307631}

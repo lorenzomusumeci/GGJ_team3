@@ -16,12 +16,9 @@ public class ExplodingBullet : MonoBehaviour
 
         foreach (Collider nearbyObject in colliders)
         {
-            EnemyStats enemyStats = nearbyObject.GetComponent<EnemyStats>();
+         
 
-            if(enemyStats != null)
-            {
-                enemyStats.TakeDamage(damage);
-            }
+           
         }
 
         Destroy(gameObject);

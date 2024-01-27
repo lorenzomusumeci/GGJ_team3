@@ -5,27 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string nomeScenaGioco = "Angelo";
-<<<<<<< HEAD
+
     public GameObject mainMenu;
     public GameObject creditsMenu;
     public GameObject comandiMenu;
     public GameObject opzioniMenu;
 
 
-=======
-    public string nomeScenaComandi = "Comandi";
-    public string nomeScenaCrediti = "Credits";
-    public string nomeScenaMain = "AngeloMain";
->>>>>>> main
-
     public void NewGame()
     {
-        SceneManager.LoadScene(nomeScenaGioco);
+        SceneManager.LoadScene(1);
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
     public void Comandi()
     {
-<<<<<<< HEAD
+
         mainMenu.SetActive(false);
         creditsMenu.SetActive(false);
         comandiMenu.SetActive(true);
@@ -51,22 +48,14 @@ public class MainMenu : MonoBehaviour
         creditsMenu.SetActive(false);
         comandiMenu.SetActive(false);
         opzioniMenu.SetActive(false);
-=======
-        SceneManager.LoadScene(nomeScenaComandi);
-    }
-    public void Credits()
-    {
-        SceneManager.LoadScene(nomeScenaCrediti);
-    }
-    public void TornaAlMain() 
-    {
-        SceneManager.LoadScene(nomeScenaMain);
->>>>>>> main
+
     }
     public void Quit()
     {
         Debug.Log("Quit Game!");
         Application.Quit();
-
     }
+
+   
+        
 }
