@@ -27,7 +27,7 @@ public class Inchiostro : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Vector3 spawnPosition = transform.position;
-        spawnPosition.y += 8;
+        spawnPosition.y += 12;
         Instantiate(airDrop, spawnPosition, airDrop.transform.rotation);
         Destroy(gameObject);
     }
