@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 758845507994113834}
   - component: {fileID: 3270460717483107296}
   - component: {fileID: 1420169945190235905}
+  - component: {fileID: -2852421685126021690}
   m_Layer: 0
   m_Name: diner pole
   m_TagString: Untagged
@@ -98,3 +99,19 @@ CapsuleCollider:
   m_Height: 0.1
   m_Direction: 2
   m_Center: {x: 0.000000009313226, y: -0.00000001909211, z: 0.04}
+--- !u!208 &-2852421685126021690
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919256209179050549}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.022000002, y: 0.0050000004, z: 0.061000004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.056}
+  m_TimeToStationary: 0.5
