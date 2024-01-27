@@ -31,8 +31,7 @@ Transform:
   m_LocalPosition: {x: 0.526, y: -0.35937095, z: 0.797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4450073918279049972}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -13.873, y: 197.6, z: 0.427}
@@ -198,38 +197,7 @@ MonoBehaviour:
   fireRate: 0.25
   nextTimeToFire: 0
   audioSource: {fileID: 53555985440283841}
-  firePoint: {fileID: 4450073918279049972}
+  firePoint: {fileID: 0}
   prefabBullet: {fileID: 8177460784100688970, guid: 7e3551c3838af78419f1ef11bb78b692, type: 3}
   bulletUpwardForce: 7
   explodingBullet: {fileID: 8617859804315584582, guid: 7e3551c3838af78419f1ef11bb78b692, type: 3}
---- !u!1 &4450073918279049975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4450073918279049972}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4450073918279049972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4450073918279049975}
-  m_LocalRotation: {x: 0.03114048, y: 0.9799492, z: 0.08898518, w: 0.17553222}
-  m_LocalPosition: {x: 0.035, y: -0, z: 0.013}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4450073919284121145}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -9.408, y: 159.247, z: 5.367}
