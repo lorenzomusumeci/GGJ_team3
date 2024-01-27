@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7459171379968933093}
   - component: {fileID: 4638913845218117679}
   - component: {fileID: 6287818557654031663}
+  - component: {fileID: -5530800845583427147}
   m_Layer: 0
   m_Name: casa01
   m_TagString: Untagged
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053874984, y: 0.031787522, z: 0.044026934}
   m_Center: {x: 0.0032467823, y: -1.564151e-16, z: 0.022013467}
+--- !u!208 &-5530800845583427147
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584341684114532858}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.6940002, y: 1.5890001, z: 2.2010002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.32500002, y: 0, z: 2.2010002}
+  m_TimeToStationary: 0.5

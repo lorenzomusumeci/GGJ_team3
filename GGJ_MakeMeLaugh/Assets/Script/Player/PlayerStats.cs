@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     private bool canHit = true;
 
+    public Canvas gameOver;
     public PlayerHealthBar playerHealthBar;
     public AudioSource hit;
 
@@ -56,6 +57,7 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
+
         Destroy(gameObject);
     }
 }
