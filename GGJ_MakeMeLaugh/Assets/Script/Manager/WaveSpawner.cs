@@ -27,7 +27,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
-        //StartCoroutine(CooldownWaves());
+
     }
 
     private void Update()
@@ -116,28 +116,7 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    /*IEnumerator CooldownWaves()
-    {
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
-        yield return new WaitForSeconds(1f);
-    }
-    */
+    
     void SpawnEnemy(Transform _enemy)
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];

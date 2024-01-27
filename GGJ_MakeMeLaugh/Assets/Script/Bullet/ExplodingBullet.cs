@@ -7,6 +7,18 @@ public class ExplodingBullet : MonoBehaviour
     public int damage = 1;
     public int radius;
     public GameObject explosionEffect;
+    private int direction;
+
+    private void Start()
+    {
+        direction = Random.Range(-180, 180);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.right * direction * 4 * Time.deltaTime); //
+        transform.Rotate(Vector3.up * direction * 4 * Time.deltaTime);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:GGJ_MakeMeLaugh/Assets/Models/Omino/OminoInutile.meta
 guid: 3f1b846b18d83444e8979062ec1be620
 folderAsset: yes
 DefaultImporter:
+========
+guid: 21a1bc4c6dbca3748adc62b5fe85e28c
+PrefabImporter:
+>>>>>>>> Alessandro:GGJ_MakeMeLaugh/Assets/Prefab/Strutture/diner house.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1997ad79c4417e4c8ccbe6e12417531
+guid: 49a5484918524bc4596d927b584a151d
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: fd243c8ffb8b7de4fab2992322e2857c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: omino merge
-    second: {fileID: 2100000, guid: fd243c8ffb8b7de4fab2992322e2857c, type: 2}
+      name: rana_in_aria
+    second: {fileID: 2100000, guid: 68aea67ad172aa24580a8d585929501f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -98,7 +93,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

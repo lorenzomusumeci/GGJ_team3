@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamMov : MonoBehaviour
 {
-    public float mouseSpeed = 100f; //sensibilita' mouse
+    public float sensitivity = 100f; //sensibilita' mouse
 
     public Transform playerBody; // riferimento al player
 
@@ -18,8 +18,8 @@ public class CamMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSpeed * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
         xRotation -= mouseY; // fa sì che il movimento non sia al contrario
 
