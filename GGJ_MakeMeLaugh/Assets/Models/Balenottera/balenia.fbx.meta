@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:GGJ_MakeMeLaugh/Assets/Models/Balenottera/balenia.fbx.meta
 guid: 5e671a34d9905f54884f33b9901ddc52
+========
+guid: d870c031d7c034447bc3b56faf48a329
+>>>>>>>> Alessandro:GGJ_MakeMeLaugh/Assets/Models/Strutture/casa01.fbx.meta
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -40,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -71,7 +75,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -93,7 +97,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

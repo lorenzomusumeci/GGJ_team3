@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     private bool canHit = true;
 
     public PlayerHealthBar playerHealthBar;
+    public AudioSource hit;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerStats : MonoBehaviour
         {
             currentHealth -= damage;
             playerHealthBar.UpdateHealthBar(currentHealth, maxHealth);
+            hit.Play();
             StartCoroutine(RedScreen());
 
             if (currentHealth == 0)

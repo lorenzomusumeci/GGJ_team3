@@ -25,7 +25,7 @@ public class HighScore : MonoBehaviour
 
             if(waveSpawner.currentWave > PlayerPrefs.GetInt("HighScore", 0))
             {
-                PlayerPrefs.GetInt("HighScore", waveSpawner.currentWave);
+                PlayerPrefs.SetInt("HighScore", waveSpawner.currentWave);
                 highScore.text = waveSpawner.currentWave.ToString();
             } 
         }

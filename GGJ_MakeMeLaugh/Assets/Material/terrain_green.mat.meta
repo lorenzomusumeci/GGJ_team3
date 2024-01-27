@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:GGJ_MakeMeLaugh/Assets/Models/Balenottera/Balena_texture.mat.meta
+guid: a0fce2075857b784a978c300e81461b0
+========
 guid: 6ad3f2d084b3c03498639aa3888c20b4
+>>>>>>>> Alessandro:GGJ_MakeMeLaugh/Assets/Material/terrain_green.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

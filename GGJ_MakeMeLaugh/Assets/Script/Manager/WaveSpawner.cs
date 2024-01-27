@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING};
 
-    public Transform enemy;
+    public Transform[] enemy;
     [SerializeField, Range(4, 50)]
     private int count = 4;
     public float rate = 1f;
@@ -22,11 +22,12 @@ public class WaveSpawner : MonoBehaviour
 
     public Text numberWaves;
     public int currentWave = 0;
+    public AudioSource roundChanged;
 
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
-        StartCoroutine(CooldownWaves());
+        //StartCoroutine(CooldownWaves());
     }
 
     private void Update()
@@ -36,12 +37,16 @@ public class WaveSpawner : MonoBehaviour
             if(!EnemyIsAlive())
             {
                 WaveCompleted();
-                StartCoroutine(CooldownWaves());
             }
             else
             {
                 return;
             }
+        }
+
+        if(state == SpawnState.COUNTING)
+        {
+            numberWaves.text = "Next Wave in " + (int)waveCountdown;
         }
 
         if (waveCountdown <= 0)
@@ -74,7 +79,8 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         state = SpawnState.COUNTING;
-        waveCountdown = timeBetweenWaves;   
+        waveCountdown = timeBetweenWaves;
+        roundChanged.Play();
     }
 
     bool EnemyIsAlive()
@@ -99,7 +105,9 @@ public class WaveSpawner : MonoBehaviour
 
         for(int i = 0; i < count; i++)
         {
-            SpawnEnemy(enemy);
+            int enemyIndex = Random.Range(0, enemy.Length);
+            SpawnEnemy(enemy[enemyIndex]);
+            
             yield return new WaitForSeconds(rate);
         }
 
@@ -108,19 +116,28 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    IEnumerator CooldownWaves()
+    /*IEnumerator CooldownWaves()
     {
-        numberWaves.text = "NEXT WAVE IN 5";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 4";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 3";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 2";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 1";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
     }
-
+    */
     void SpawnEnemy(Transform _enemy)
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
