@@ -5,7 +5,8 @@ using UnityEngine;
 public class Rana : ShootManager
 {
     public int bulletUpwardForce = 1;
-
+    public GameObject rana;
+    public Animator anim;
     public ExplodingBullet explodingBullet;
 
     private void Start()
@@ -17,6 +18,8 @@ public class Rana : ShootManager
     public override void Shoot()
     {
         audioSource.Play();
+        anim.SetTrigger("Shoot");
+        StartCoroutine(SpawnRana());
 
         GameObject bullet = Instantiate(prefabBullet, firePoint.position, firePoint.rotation);
 
@@ -30,6 +33,12 @@ public class Rana : ShootManager
             // Applica la forza al proiettile
             bulletRb.AddForce(forceToAdd, ForceMode.Impulse);
         }
+    }
 
+    IEnumerator SpawnRana()
+    {
+        rana.SetActive(false);
+        yield return new WaitForSeconds(4);
+        rana.SetActive(true);
     }
 }
