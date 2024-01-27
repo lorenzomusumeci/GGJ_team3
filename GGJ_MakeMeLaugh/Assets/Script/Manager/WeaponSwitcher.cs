@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitcher : MonoBehaviour
 {
     public int selectedWeapon = 0;
     public int acquiredWeapon = 1;
     public GameObject[] weapons;
+    public PlayerHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,22 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(selectedWeapon == 0)
+        {
+            healthBar.backgroundSprite = healthBar.balenaSprite;
+        }
+
+        if (selectedWeapon == 1)
+        {
+            healthBar.backgroundSprite = healthBar.ranaSprite;
+        }
+
+        if (selectedWeapon == 2)
+        {
+            healthBar.backgroundSprite = healthBar.seppiaSprite;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SwitchToSecondOrder(weapons[2]);
         }
@@ -95,9 +112,4 @@ public class WeaponSwitcher : MonoBehaviour
     {
         gameObject.transform.SetSiblingIndex(1);
     }
-
-    /*public void SwitchToThirdOrder(GameObject gameObject)
-    {
-        gameObject.transform.SetSiblingIndex(2);
-    }*/
 }

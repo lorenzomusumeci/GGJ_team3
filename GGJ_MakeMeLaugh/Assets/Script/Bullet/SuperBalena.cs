@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SuperBalena : MonoBehaviour
 {
+    public AudioSource audioSource;
+
     private void Start()
     {
         StartCoroutine(DestroyObject());
@@ -21,6 +23,8 @@ public class SuperBalena : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
+        audioSource.Play();
+
         yield return new WaitForSeconds(2);
 
         Destroy(gameObject);

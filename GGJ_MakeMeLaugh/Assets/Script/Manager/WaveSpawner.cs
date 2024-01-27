@@ -27,7 +27,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
-        StartCoroutine(CooldownWaves());
+        //StartCoroutine(CooldownWaves());
     }
 
     private void Update()
@@ -37,12 +37,16 @@ public class WaveSpawner : MonoBehaviour
             if(!EnemyIsAlive())
             {
                 WaveCompleted();
-                StartCoroutine(CooldownWaves());
             }
             else
             {
                 return;
             }
+        }
+
+        if(state == SpawnState.COUNTING)
+        {
+            numberWaves.text = "Next Wave in " + (int)waveCountdown;
         }
 
         if (waveCountdown <= 0)
@@ -112,19 +116,28 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    IEnumerator CooldownWaves()
+    /*IEnumerator CooldownWaves()
     {
-        numberWaves.text = "NEXT WAVE IN 5";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 4";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 3";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 2";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
         yield return new WaitForSeconds(1f);
-        numberWaves.text = "NEXT WAVE IN 1";
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
+        numberWaves.text = "NEXT WAVE IN " + (int)waveCountdown;
+        yield return new WaitForSeconds(1f);
     }
-
+    */
     void SpawnEnemy(Transform _enemy)
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
