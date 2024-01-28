@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:GGJ_MakeMeLaugh/Assets/Prefab/Strutture/blocco stradale oggetto.prefab.meta
+guid: bbcad1e2c1fdc4e428b557c5a573727a
+========
 guid: a9981f9fd0db5e44180947c7e78f65b8
+>>>>>>>> Lorenzo:GGJ_MakeMeLaugh/Assets/Prefab/BalenotteraMuro.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
