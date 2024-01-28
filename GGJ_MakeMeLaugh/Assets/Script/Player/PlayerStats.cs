@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         currentHealth = maxHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
@@ -57,7 +58,9 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
-
-        Destroy(gameObject);
+        gameOver.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
