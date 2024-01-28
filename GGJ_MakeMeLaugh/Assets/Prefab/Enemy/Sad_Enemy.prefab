@@ -479,7 +479,7 @@ MonoBehaviour:
   maxHealth: 0
   damage: 1
   knockbackForce: 750
-  happyPrefab: {fileID: 2365648403214508160, guid: 224d4f38344382344b00d4820740e3d9, type: 3}
+  happyPrefab: {fileID: 5659870610073466070, guid: 8c8250edc21c10e4ba11cc061e85b84c, type: 3}
   enemyHealthBar: {fileID: 4217829249434867831}
   waveSpawner: {fileID: 0}
   rbEnemy: {fileID: 4217829247843945505}

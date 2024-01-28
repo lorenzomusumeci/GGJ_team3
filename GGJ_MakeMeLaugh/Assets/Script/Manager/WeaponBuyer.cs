@@ -9,7 +9,6 @@ public class WeaponBuyer : MonoBehaviour
 
     private bool canBuy;
     private bool sparaRaneBuyed;
-    private bool seppiaBuyed;
 
     [SerializeField]
     private int acquisto;
@@ -29,19 +28,21 @@ public class WeaponBuyer : MonoBehaviour
     [Header("SparaRane")]
     public ExplodingBullet sparaRane;
 
+    private void Start()
+    {
+        text.gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canBuy == true)
         {
-            
-
             if(weaponName == "Balenottera")
             {
                 if(coin.coin >= potenziamento)
                 {
                     sfx.Play();
                     coin.coin -= potenziamento;
-                    coin.UpdateCoin();
                     bolla.damage++;
                     balenottera.fireRate = balenottera.fireRate * 2;
                     Destroy(gameObject);
@@ -55,10 +56,9 @@ public class WeaponBuyer : MonoBehaviour
                     {
                         sfx.Play();
                         coin.coin -= acquisto;
-                        coin.UpdateCoin();
                         weaponSwitcher.acquiredWeapon++;
                         sparaRaneBuyed = true;
-                        text.text = "Potenzia lo SparaRane a 100 monete";
+                        text.text = "Potenzia 'SparaRane': 100";
                     }
                 }
                 else
@@ -66,7 +66,6 @@ public class WeaponBuyer : MonoBehaviour
                     {
                         sfx.Play();
                         coin.coin -= potenziamento;
-                        coin.UpdateCoin();
                         sparaRane.damage++;
                         sparaRane.radius = 7;
                         Destroy(gameObject);
@@ -75,13 +74,24 @@ public class WeaponBuyer : MonoBehaviour
 
             if(weaponName == "Seppia")
             {
-                if (weaponSwitcher.acquiredWeapon == 1)
+                if(coin.coin >= acquisto)
                 {
-                    weaponSwitcher.SwitchToSecondOrder(weaponSwitcher.weapons[2]);
-                    weaponSwitcher.acquiredWeapon++;
-                }
-                else
-                    weaponSwitcher.acquiredWeapon++;
+                    if (weaponSwitcher.acquiredWeapon == 1)
+                    {
+                        sfx.Play();
+                        coin.coin -= acquisto;
+                        weaponSwitcher.SwitchToSecondOrder(weaponSwitcher.weapons[2]);
+                        weaponSwitcher.acquiredWeapon++;
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        sfx.Play();
+                        weaponSwitcher.acquiredWeapon++;
+                        coin.coin -= acquisto;
+                        Destroy(gameObject);
+                    }
+                } 
             }
         }
     }

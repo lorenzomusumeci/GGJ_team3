@@ -11,7 +11,7 @@ public class HappyIA : MonoBehaviour
 
     void Start()
     {
-        heaven = GameObject.Find("Heaven").transform;
+        heaven = GameObject.Find("Enemy_Despawner").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(Dance());
