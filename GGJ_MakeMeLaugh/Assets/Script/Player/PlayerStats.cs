@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
             hit.Play();
             StartCoroutine(RedScreen());
 
-            if (currentHealth == 0)
+            if (currentHealth <= 0)
             {
                 Die();
             }

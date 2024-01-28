@@ -58,7 +58,7 @@ public class WeaponBuyer : MonoBehaviour
                         coin.coin -= acquisto;
                         weaponSwitcher.acquiredWeapon++;
                         sparaRaneBuyed = true;
-                        text.text = "Potenzia 'SparaRane': 100";
+                        text.text = "Upgrade 'Frogger': 100";
                     }
                 }
                 else

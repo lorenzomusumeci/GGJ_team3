@@ -16,7 +16,7 @@ public class Pausa : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         showPause = false;
         pausaTesto.SetActive(false);

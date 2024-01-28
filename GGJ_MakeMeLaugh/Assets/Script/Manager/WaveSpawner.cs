@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING};
 
     public Transform[] enemy;
-    [SerializeField, Range(4, 50)]
-    private int count = 4;
+    [SerializeField]
+    private int count = 8;
     public float rate = 1f;
 
     public Transform[] spawnPoints;
@@ -20,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
 
     private SpawnState state = SpawnState.COUNTING;
 
-    public Text numberWaves;
+    public TextMeshProUGUI numberWaves;
     public int currentWave = 0;
     public AudioSource roundChanged;
 

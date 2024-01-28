@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CamMov : MonoBehaviour
 {
+    public Slider sensitivitySlider;
     public float sensitivity = 100f; //sensibilita' mouse
 
     public Transform playerBody; // riferimento al player
@@ -18,6 +20,7 @@ public class CamMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sensitivity = sensitivitySlider.value;
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 

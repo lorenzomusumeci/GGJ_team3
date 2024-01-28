@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4450073919284121145
 Transform:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a0fce2075857b784a978c300e81461b0, type: 2}
+  - {fileID: 2100000, guid: c60ba18adffd75e45a90de9f7f2edb95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,4 +200,6 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   prefabBullet: {fileID: 8177460784100688970, guid: 7e3551c3838af78419f1ef11bb78b692, type: 3}
   bulletUpwardForce: 7
+  rana: {fileID: 0}
+  anim: {fileID: 0}
   explodingBullet: {fileID: 8617859804315584582, guid: 7e3551c3838af78419f1ef11bb78b692, type: 3}
