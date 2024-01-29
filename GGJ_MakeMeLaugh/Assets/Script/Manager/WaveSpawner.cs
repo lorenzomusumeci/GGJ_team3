@@ -30,11 +30,12 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
+        numberWaves.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        remainingEnemiesText.text = remainingEnemies.ToString();
+        remainingEnemiesText.text = "Enemies left " + remainingEnemies.ToString();
 
         if (state == SpawnState.WAITING)
         {
@@ -70,7 +71,7 @@ public class WaveSpawner : MonoBehaviour
                 }
 
                 currentWave++;
-                numberWaves.text = "WAVE NUMBER " + currentWave;
+                numberWaves.text = "WAVE NUMBER: " + currentWave;
                 numberWaves.gameObject.SetActive(true);
             }
         }

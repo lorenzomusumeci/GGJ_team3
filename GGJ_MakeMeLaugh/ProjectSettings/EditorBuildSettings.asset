@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Angelo/AngeloMain.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 6e6dd2262e22b294ca6ff64b19b36c64
   - enabled: 1
-    path: Assets/Scenes/Environment.unity
+    path: Assets/Scenes/Livello.unity
     guid: 494d36fd6687d4343986b9a8dcabbb0b
   m_configObjects: {}
