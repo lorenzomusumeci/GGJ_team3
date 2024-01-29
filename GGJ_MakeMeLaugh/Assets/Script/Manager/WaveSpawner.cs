@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private int count = 8;
     public float rate = 1f;
+    public int remainingEnemies;
 
     public Transform[] spawnPoints;
 
@@ -21,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
 
     private SpawnState state = SpawnState.COUNTING;
 
+    public TextMeshProUGUI remainingEnemiesText;
     public TextMeshProUGUI numberWaves;
     public int currentWave = 0;
     public AudioSource roundChanged;
@@ -28,11 +30,12 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
-
     }
 
     private void Update()
     {
+        remainingEnemiesText.text = remainingEnemies.ToString();
+
         if (state == SpawnState.WAITING)
         {
             if(!EnemyIsAlive())
@@ -122,5 +125,6 @@ public class WaveSpawner : MonoBehaviour
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(_enemy, sp.position, sp.rotation);
+        remainingEnemies++;
     }
 }

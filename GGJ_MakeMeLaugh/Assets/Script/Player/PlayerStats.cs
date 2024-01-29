@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public Canvas gameOver;
     public PlayerHealthBar playerHealthBar;
     public AudioSource hit;
+    public AudioSource music;
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class PlayerStats : MonoBehaviour
     void Die()
     {
         gameOver.gameObject.SetActive(true);
+        music.Stop();
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

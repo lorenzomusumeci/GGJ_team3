@@ -77,6 +77,7 @@ public class EnemyStats : MonoBehaviour
     {
         coinManager.UpdateCoin();
         Instantiate(happyPrefab, transform.position, transform.rotation);
+        waveSpawner.remainingEnemies--;
         Destroy(gameObject);
     }
 }
